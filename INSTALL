@@ -1,0 +1,26 @@
+Installing the runs test above and below the mean.
+
+The following dependencies are used by the programs in this
+repository.
+
+GNU Scientific Library.
+
+sudo apt-get install libgsl2
+sudo apt-get install libgsl-dev
+sudo apt-get install gsl-ref-html
+
+Make shell scripts executable.
+
+chmod 755 *.sh
+
+Next compile the programs.
+
+./inst.sh
+
+To de-install this repository:
+
+./deinst.sh
+
+For more information about the runs test above and below
+the mean, read TESTING and README.md.
+
