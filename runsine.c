@@ -45,7 +45,6 @@ double gen_dbl(xxfmt *xx)
    /* Since the sine is not a uniform distribution */
    /* the samples generated here should fail the */
    /* runs test above and below the mean, in theory. */
-   /* But in fact, these samples pass the runs test */
    sinx = sin(radian);
    return(sinx);
    } /* gen _dbl */
