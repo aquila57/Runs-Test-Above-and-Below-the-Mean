@@ -179,8 +179,11 @@ is puzzling, because other groups of random??? generators passed.
 For example, the random256 group all passed.
 
 random32-bsd
+
 random32-glibc2
+
 random32-libc5
+
 randu
 
 ----------------
