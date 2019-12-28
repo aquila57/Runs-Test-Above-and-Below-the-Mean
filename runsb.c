@@ -69,6 +69,10 @@ int main(void)
          "allocating xx->smpls\n");
       exit(1);
       } /* out of memory */
+   printf("\n");
+   printf("\t     eegl64 Generator\n");
+   printf("\tRuns Above and Below the Mean\n");
+   printf("\n");
    /* Initialize the eegl64 random number generator */
    initrng(xx);
    xx->dblsz = (double) SMPLS;
