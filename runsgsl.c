@@ -74,8 +74,12 @@ int main(void)
          "allocating xx->smpls\n");
       exit(1);
       } /* out of memory */
-   /* Initialize the eegl64 random number generator */
+   /* Initialize the GSL random number generator */
    initrng(xx);
+   printf("\tGNU Scientific Library " 
+      "Generator: %s\n", xx->rngname);
+   printf("\t    Runs Above and Below the Mean\n");
+   printf("\n");
    xx->dblsz = (double) SMPLS;
    /* populate the samples list with ten million samples */
    fillsmpls(xx);
