@@ -22,9 +22,7 @@
 
 /* Runsb test above and below the mean, RANDU generator */
 
-/* Initialize the eegl64 random number generator */
-/* See the eegl64 repository for more information about */
-/* this generator. */
+/* Initialize the RANDU random number generator */
 
 void initrng(xxfmt *xx)
    {
@@ -74,7 +72,11 @@ int main(void)
          "allocating xx->smpls\n");
       exit(1);
       } /* out of memory */
-   /* Initialize the eegl64 random number generator */
+   printf("\n");
+   printf("\t     RANDU Generator\n");
+   printf("\tRuns Above and Below the Mean\n");
+   printf("\n");
+   /* Initialize the RANDU random number generator */
    initrng(xx);
    xx->dblsz = (double) SMPLS;
    /* populate the samples list with ten million samples */
