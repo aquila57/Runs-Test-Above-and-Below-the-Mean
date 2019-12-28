@@ -70,6 +70,10 @@ int main(void)
          "allocating xx->smpls\n");
       exit(1);
       } /* out of memory */
+   printf("\n");
+   printf("\t      LFSR Generator\n");
+   printf("\tRuns Above and Below the Mean\n");
+   printf("\n");
    initrng(xx);
    xx->dblsz = (double) SMPLS;
    fillsmpls(xx);

@@ -1,5 +1,5 @@
-/* fillsmpls.c - Fill samples list Version 0.1.0 */
-/* Copyright (C) 2019 aquila57 at github.com                    */
+/* getbyte.c - Read one byte from stdin  Version 0.1.0 */
+/* Copyright (C) 2019 aquila57 at github.com */
 
 /* This program is free software; you can redistribute it and/or     */
 /* modify it under the terms of the GNU General Public License as    */
@@ -18,27 +18,22 @@
    /* 59 Temple Place - Suite 330                                    */
    /* Boston, MA 02111-1307, USA.                                    */
 
-#include "runsb.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-/* Fill samples list with ten million samples */
-/* Each sample is a uniform random number from zero to one */
+/* Read one byte from stdin */
 
-void fillsmpls(xxfmt *xx)
+int getbyte(void)
    {
-   double kount;
-   double *p,*q;
-   double prev;
-   prev = -999999999.0;
-   kount = 0.0;
-   p = (double *) xx->smpls;
-   q = (double *) xx->smpls + SMPLS;
-   while (p < q)
+   int len;
+   char buf[8];
+   len = read(0,buf,1);
+   if (!len) return(EOF);
+   if (len != 1)
       {
-      double newnum;
-      do {
-         newnum = gen_dbl(xx);
-	 } while (newnum == prev);
-      *p++ = prev = newnum;
-      kount += 1.0;
-      } /* for each sample */
-   } /* fillsmpls */
+      fprintf(stderr,"getbyte: read error\n");
+      exit(1);
+      } /* read error */
+   return(buf[0]);
+   } /* getbyte */
