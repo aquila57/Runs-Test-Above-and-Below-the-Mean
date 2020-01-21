@@ -1,5 +1,5 @@
 #  runslfsr.mak - Compile runslfsr.c Version 0.1.0
-#  Copyright (C) 2019 aquila57 at github.com
+#  Copyright (C) 2020 aquila57 at github.com
 
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License as
@@ -26,67 +26,19 @@
 # to 64
 #--------------------------------------------------------
 
-OBJ=runslfsr.o \
-	fillsmpls.o \
-	getmean.o \
-	calc_zedb.o \
-	calcchi.o \
-	calc_expval.o \
-	calc_EI.o \
-	calc_wi.o \
-	permute.o \
-	freeall.o \
-	eeglinit.o \
-	eegl.o \
-	eeglunif.o
+OBJ=runslfsr.o
 
 CC=gcc
 
 CFLAGS=-c -Wall -O2
 
-LDFLAGS=-lgsl -lgslcblas -lm
+LDFLAGS=-L. -lruns -lgsl -lgslcblas -lm
 
 runslfsr:			$(OBJ)
 		$(CC) -Wall -O2 $(OBJ) -o runslfsr $(LDFLAGS)
 
 runslfsr.o:			runslfsr.c
 		$(CC) $(CFLAGS) runslfsr.c
-
-fillsmpls.o:			fillsmpls.c
-		$(CC) $(CFLAGS) fillsmpls.c
-
-getmean.o:			getmean.c
-		$(CC) $(CFLAGS) getmean.c
-
-freeall.o:			freeall.c
-		$(CC) $(CFLAGS) freeall.c
-
-calc_zedb.o:			calc_zedb.c
-		$(CC) $(CFLAGS) calc_zedb.c
-
-calcchi.o:			calcchi.c
-		$(CC) $(CFLAGS) calcchi.c
-
-calc_expval.o:			calc_expval.c
-		$(CC) $(CFLAGS) calc_expval.c
-
-calc_EI.o:			calc_EI.c
-		$(CC) $(CFLAGS) calc_EI.c
-
-calc_wi.o:			calc_wi.c
-		$(CC) $(CFLAGS) calc_wi.c
-
-permute.o:			permute.c
-		$(CC) $(CFLAGS) permute.c
-
-eeglinit.o:			eeglinit.c
-		$(CC) $(CFLAGS) eeglinit.c
-
-eegl.o:				eegl.c
-		$(CC) $(CFLAGS) eegl.c
-
-eeglunif.o:			eeglunif.c
-		$(CC) $(CFLAGS) eeglunif.c
 
 clean:
 		rm -f $(OBJ) runslfsr

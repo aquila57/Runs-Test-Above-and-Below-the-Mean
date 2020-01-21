@@ -1,4 +1,4 @@
-#  runsgsl.mak - Compile runsgsl.c Version 0.1.0
+#  runsetaus.mak - Compile runsetaus.c Version 0.1.0
 #  Copyright (C) 2020 aquila57 at github.com
 
 #  This program is free software; you can redistribute it and/or
@@ -18,7 +18,7 @@
    #  59 Temple Place - Suite 330
    #  Boston, MA 02111-1307, USA.
 
-OBJ=runsgsl.o
+OBJ=runsetaus.o
 
 CC=gcc
 
@@ -26,11 +26,11 @@ CFLAGS=-c -Wall -O2
 
 LDFLAGS=-L. -lruns -lgsl -lgslcblas -lm
 
-runsgsl:			$(OBJ)
-		$(CC) -Wall -O2 $(OBJ) -o runsgsl $(LDFLAGS)
+runsetaus:			$(OBJ)
+		$(CC) -Wall -O2 $(OBJ) -o runsetaus $(LDFLAGS)
 
-runsgsl.o:			runsgsl.c
-		$(CC) $(CFLAGS) runsgsl.c
+runsetaus.o:			runsetaus.c
+		$(CC) $(CFLAGS) runsetaus.c
 
 clean:
-		rm -f $(OBJ) runsgsl
+		rm -f $(OBJ) runsetaus

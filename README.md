@@ -76,6 +76,17 @@ generator passes the runs test above and below the mean.
 
 ----------------
 
+etaus
+
+The etaus random number generator is explained in the repository
+"etaus".  That is a random number generator based on the Tausworthe
+algorithm with a Bays Durham shuffle.  The period length of the etaus
+generator approximates 1.2 * 10^61036 generations.  That is a long
+period length that never terminates, or wraps around.  The etaus
+generator passes the runs test above and below the mean.
+
+----------------
+
 Fibonacci
 
 The fibonacci random number generator illustrates how a weak
